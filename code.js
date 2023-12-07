@@ -1,5 +1,7 @@
 function divConqSum(arr) {
     // Base case: If the array has only one element, return that element.
+    if (arr.length === 0){
+        return 0
     if (arr.length === 1) {
         return arr[0];
     }
