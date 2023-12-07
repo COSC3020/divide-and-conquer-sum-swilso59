@@ -1,7 +1,7 @@
 function divConqSum(arr) {
     // Base case: If the array has only one element, return that element.
     if (arr.length === 0){
-        return 0
+        return 0;
     }
     if (arr.length === 1) {
         return arr[0];
@@ -9,18 +9,10 @@ function divConqSum(arr) {
 
     // Split the array into three roughly equal sub-arrays.
     const n = arr.length;
-    const third = Math.floor(n / 3);
-    const subarray1 = arr.slice(0, third);
-    const subarray2 = arr.slice(third, 2 * third);
-    const subarray3 = arr.slice(2 * third);
+    var mid = Math.round(n / 3);
+    var mid2 = mid *2;   
 
-    // Recursively call divConqSum on each sub-array and sum the results.
-    const sum1 = divConqSum(subarray1);
-    const sum2 = divConqSum(subarray2);
-    const sum3 = divConqSum(subarray3);
-
-    // Return the total sum.
-    return sum1 + sum2 + sum3;
+    return divConqSum(arr.slice(0,mid)) + divConqSum(arr.slice(mid,mid2)) + divConqSum(arr.slice(mid2));
 }
 
 // Test case 1: Array with positive integers
@@ -38,3 +30,4 @@ const arr3 = [1, -2, 3, -4, 5];
 const sum3 = divConqSum(arr3);
 console.log("Test case 3 result:", sum3); // Expected output: 3
 
+// Got help from the TA unsure why the test were failing but it seems to work now. Maybe because I was using Math.floor and switched it to Math.round??
