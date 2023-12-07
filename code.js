@@ -2,6 +2,7 @@ function divConqSum(arr) {
     // Base case: If the array has only one element, return that element.
     if (arr.length === 0){
         return 0
+    }
     if (arr.length === 1) {
         return arr[0];
     }
@@ -21,7 +22,6 @@ function divConqSum(arr) {
     // Return the total sum.
     return sum1 + sum2 + sum3;
 }
-// Import or include the divConqSum function here.
 
 // Test case 1: Array with positive integers
 const arr1 = [1, 2, 3, 4, 5];
