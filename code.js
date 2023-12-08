@@ -31,3 +31,4 @@ const sum3 = divConqSum(arr3);
 console.log("Test case 3 result:", sum3); // Expected output: 3
 
 // Got help from the TA unsure why the test were failing but it seems to work now. Maybe because I was using Math.floor and switched it to Math.round??
+// There was a function naming error that I did not notice. I changed the function name in the code.test.js file to match my funciton name. 
