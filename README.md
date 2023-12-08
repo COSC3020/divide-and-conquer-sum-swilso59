@@ -26,3 +26,42 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+# Analysis of the `divConqSum` Algorithm
+
+## Understanding the Algorithm
+
+- The goal of the algorithm is to find the sum of all numbers in an array.
+- It does this by breaking the array into three parts, finding the sum of each part, and adding those sums together.
+
+## Recurrence Relation
+
+- To analyze the algorithm's time complexity, we use a recurrence relation.
+- Let `T(n)` be the time it takes to solve a problem with `n` elements.
+
+- The algorithm's steps:
+  1. Divide the problem into three smaller problems (split the array into three parts).
+  2. Solve each smaller problem (recursively call `divConqSum`).
+  3. Combine the results (add them together).
+
+- So, the recurrence relation becomes:
+- T(n) = 3T(n/3) + O(n)
+  
+## Solving the Recurrence Relation
+
+- We use the Master Theorem to solve the recurrence relation.
+- In our case, `a = 3` (because of the three splits), `b = 3` (each part is about a third of the original), and `f(n) = O(n)` (combining results).
+
+- Compare `f(n)` with `n^(log_b(a))`. In our case, `n^(log_3(3))` simplifies to `n`.
+
+- If `f(n)` is smaller than `n`, it means combining results is less significant than splitting and solving problems.
+
+- So, according to the Master Theorem, the time complexity is `Θ(n)`.
+
+## Final Complexity
+
+- The `divConqSum` algorithm's time complexity is `Θ(n)`.
+
+In simple terms, the algorithm efficiently divides, solves, and combines the results. The time it takes for a problem of size `n` is proportional to `n`, resulting in a linear time complexity.
+
+
